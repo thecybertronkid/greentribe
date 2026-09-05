@@ -40,37 +40,37 @@ export default function StoryImpactPage({ onNavigate, onOpenVideo }) {
   ];
 
   return (
-    <div className="space-y-16 pb-20">
+    <div className="space-y-20 pb-24">
       
-      {/* Hero Banner matching bottom right screenshot */}
-      <section className="relative bg-emerald-950 text-white overflow-hidden py-16 sm:py-24">
+      {/* Hero Banner */}
+      <section className="relative emerald-gradient-bg text-white overflow-hidden py-16 sm:py-24 border-b border-brand-gold/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           
           <div className="lg:col-span-7 space-y-6">
-            <span className="inline-flex items-center gap-2 bg-emerald-900/80 text-amber-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-emerald-800">
-              <Award className="w-3.5 h-3.5" /> North East Cane & Bamboo Development Council
+            <span className="inline-flex items-center gap-2 bg-emerald-900/80 text-amber-300 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-emerald-700 shadow-sm">
+              <Award className="w-4 h-4 text-amber-400" /> North East Cane & Bamboo Development Council
             </span>
 
             <h1 className="brand-font-serif text-4xl sm:text-5xl font-bold leading-tight">
               Rooted in Nature.<br />
-              Made for a Better Tomorrow.
+              <span className="gold-gradient-text italic">Made for a Better Tomorrow.</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-emerald-100/90 leading-relaxed max-w-xl">
+            <p className="text-sm sm:text-base text-emerald-100/90 leading-relaxed max-w-xl font-medium">
               At greeNtribE, we create sustainable products that celebrate tradition, support artisans, and protect our planet for future generations.
             </p>
 
             <div className="pt-2 flex items-center gap-4">
               <button
                 onClick={() => onNavigate('shop')}
-                className="bg-amber-500 hover:bg-amber-600 text-brand-charcoal text-xs sm:text-sm font-bold px-6 py-3.5 rounded-xl transition-colors"
+                className="bg-amber-500 hover:bg-amber-600 text-brand-charcoal text-xs sm:text-sm font-bold px-7 py-4 rounded-2xl transition-all shadow-lg hover:scale-105"
               >
                 Shop Handcrafted Catalog
               </button>
 
               <button
                 onClick={onOpenVideo}
-                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 text-xs sm:text-sm font-bold px-5 py-3.5 rounded-xl transition-colors flex items-center gap-2"
+                className="bg-white/10 hover:bg-white/20 text-white border border-white/30 text-xs sm:text-sm font-bold px-6 py-4 rounded-2xl transition-all flex items-center gap-2 backdrop-blur-md hover:scale-105"
               >
                 <Play className="w-4 h-4 fill-white" /> Watch The Making Story
               </button>
@@ -78,9 +78,9 @@ export default function StoryImpactPage({ onNavigate, onOpenVideo }) {
           </div>
 
           <div className="lg:col-span-5 relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-emerald-800 relative group cursor-pointer" onClick={onOpenVideo}>
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-emerald-800 relative group cursor-pointer" onClick={onOpenVideo}>
               <img 
-                src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1000&auto=format&fit=crop" 
+                src="/products/wave_pendant_light.png" 
                 alt="Artisan weaving cane" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
               />
@@ -95,33 +95,33 @@ export default function StoryImpactPage({ onNavigate, onOpenVideo }) {
         </div>
       </section>
 
-      {/* Our Impact in Numbers matching screenshot */}
+      {/* Our Impact in Numbers */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto space-y-2 mb-10">
-          <span className="text-xs font-bold text-brand-green tracking-widest uppercase">Empowerment Metrics</span>
-          <h2 className="brand-font-serif text-3xl font-bold text-brand-charcoal">
+          <span className="text-xs font-bold text-amber-700 dark:text-amber-400 tracking-widest uppercase">Empowerment Metrics</span>
+          <h2 className="brand-font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal dark:text-amber-100">
             Our Impact in Numbers
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {impactStats.map((stat, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-2xl border border-brand-border-light text-center shadow-xs hover:shadow-md transition-shadow space-y-2">
-              <span className="brand-font-serif text-4xl font-bold text-brand-green block">
+            <div key={idx} className="bg-white dark:bg-brand-dark-card p-8 rounded-3xl border border-brand-border-light dark:border-brand-gold/30 text-center luxury-card-shadow space-y-2 transition-colors duration-400">
+              <span className="brand-font-serif text-4xl font-bold text-brand-green dark:text-amber-300 block">
                 {stat.number}
               </span>
-              <h3 className="text-sm font-bold text-brand-charcoal">{stat.label}</h3>
-              <p className="text-xs text-brand-gray">{stat.desc}</p>
+              <h3 className="text-sm font-bold text-brand-charcoal dark:text-amber-100">{stat.label}</h3>
+              <p className="text-xs text-brand-gray dark:text-emerald-200/80 font-medium">{stat.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* What Drives Us 4 Pillars matching screenshot */}
+      {/* What Drives Us 4 Pillars */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="text-center max-w-xl mx-auto space-y-2">
-          <span className="text-xs font-bold text-brand-green tracking-widest uppercase">Our Core Beliefs</span>
-          <h2 className="brand-font-serif text-3xl font-bold text-brand-charcoal">
+          <span className="text-xs font-bold text-amber-700 dark:text-amber-400 tracking-widest uppercase">Our Core Beliefs</span>
+          <h2 className="brand-font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal dark:text-amber-100">
             What Drives Us
           </h2>
         </div>
@@ -130,45 +130,45 @@ export default function StoryImpactPage({ onNavigate, onOpenVideo }) {
           {pillars.map((p, idx) => {
             const Icon = p.icon;
             return (
-              <div key={idx} className="bg-white p-6 rounded-2xl border border-brand-border-light/80 shadow-xs space-y-3">
-                <div className="w-12 h-12 rounded-xl bg-brand-light-green text-brand-green flex items-center justify-center">
-                  <Icon className="w-6 h-6" />
+              <div key={idx} className="bg-white dark:bg-brand-dark-card p-7 rounded-3xl border border-brand-border-light dark:border-brand-gold/30 luxury-card-shadow space-y-3.5 transition-colors duration-400">
+                <div className="w-12 h-12 rounded-2xl bg-brand-beige dark:bg-emerald-950 text-brand-green dark:text-amber-300 border border-brand-gold/30 flex items-center justify-center shrink-0">
+                  <Icon className="w-6 h-6 text-amber-700 dark:text-amber-400" />
                 </div>
-                <h3 className="brand-font-serif text-lg font-bold text-brand-charcoal">{p.title}</h3>
-                <p className="text-xs text-brand-gray leading-relaxed">{p.desc}</p>
+                <h3 className="brand-font-serif text-lg font-bold text-brand-charcoal dark:text-amber-100">{p.title}</h3>
+                <p className="text-xs text-brand-gray dark:text-emerald-200/80 leading-relaxed font-medium">{p.desc}</p>
               </div>
             );
           })}
         </div>
       </section>
 
-      {/* The Making Story Video Feature matching screenshot bottom right */}
+      {/* The Making Story Video Feature */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-brand-border-light shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-white dark:bg-brand-dark-card rounded-3xl p-6 sm:p-10 border border-brand-border-light dark:border-brand-gold/30 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-colors duration-400">
           
           <div className="lg:col-span-6 space-y-4">
-            <span className="text-xs font-bold text-amber-700 uppercase tracking-wider">Documentary Feature</span>
-            <h2 className="brand-font-serif text-3xl font-bold text-brand-charcoal">
+            <span className="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider">Documentary Feature</span>
+            <h2 className="brand-font-serif text-3xl font-bold text-brand-charcoal dark:text-amber-100">
               The Making Story
             </h2>
-            <p className="text-xs sm:text-sm text-brand-gray leading-relaxed">
+            <p className="text-xs sm:text-sm text-brand-gray dark:text-emerald-200/80 leading-relaxed font-medium">
               Watch how our products come to life through centuries-old bamboo splitting, natural dying, and hand-weaving techniques in the rural craft clusters of North East India.
             </p>
             <button
               onClick={onOpenVideo}
-              className="bg-brand-green hover:bg-brand-green-hover text-white text-xs font-bold px-6 py-3 rounded-xl shadow-md transition-colors flex items-center gap-2"
+              className="emerald-gradient-bg text-amber-200 text-xs font-bold px-7 py-3.5 rounded-xl shadow-md hover:opacity-95 transition-all flex items-center gap-2 border border-brand-gold/30"
             >
-              <Play className="w-4 h-4 fill-white" /> PLAY VIDEO DOCUMENTARY
+              <Play className="w-4 h-4 fill-amber-300 text-amber-300" /> PLAY VIDEO DOCUMENTARY
             </button>
           </div>
 
-          <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-lg border border-brand-border-light cursor-pointer group" onClick={onOpenVideo}>
+          <div className="lg:col-span-6 relative aspect-video rounded-2xl overflow-hidden shadow-lg border border-brand-gold/30 cursor-pointer group bg-brand-dark-card" onClick={onOpenVideo}>
             <img 
-              src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80&w=1000&auto=format&fit=crop" 
+              src="/products/swirl_pendant_light.png" 
               alt="Making Story Thumbnail" 
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
             />
-            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors flex items-center justify-center">
               <div className="w-16 h-16 rounded-full bg-white text-brand-green flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
                 <Play className="w-7 h-7 fill-brand-green ml-1" />
               </div>
@@ -181,20 +181,20 @@ export default function StoryImpactPage({ onNavigate, onOpenVideo }) {
       {/* Craft Cluster Regional Map */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="text-center max-w-xl mx-auto space-y-2">
-          <span className="text-xs font-bold text-brand-green tracking-widest uppercase">Heritage Clusters</span>
-          <h2 className="brand-font-serif text-3xl font-bold text-brand-charcoal">
+          <span className="text-xs font-bold text-amber-700 dark:text-amber-400 tracking-widest uppercase">Heritage Clusters</span>
+          <h2 className="brand-font-serif text-3xl font-bold text-brand-charcoal dark:text-amber-100">
             North East Artisan Regions
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {regions.map((reg, idx) => (
-            <div key={idx} className="bg-brand-beige-dark/30 p-6 rounded-2xl border border-brand-border-light space-y-2">
-              <div className="flex items-center gap-2 text-brand-green font-bold text-sm">
-                <MapPin className="w-4 h-4 text-amber-700" />
+            <div key={idx} className="bg-brand-beige-dark/30 dark:bg-emerald-950/60 p-6 rounded-3xl border border-brand-border-light dark:border-brand-gold/30 space-y-2 transition-colors duration-400">
+              <div className="flex items-center gap-2 text-brand-green dark:text-amber-300 font-bold text-sm">
+                <MapPin className="w-4 h-4 text-amber-700 dark:text-amber-400" />
                 <span>{reg.name}</span>
               </div>
-              <p className="text-xs text-brand-gray leading-relaxed">{reg.focus}</p>
+              <p className="text-xs text-brand-gray dark:text-emerald-200/80 leading-relaxed font-medium">{reg.focus}</p>
             </div>
           ))}
         </div>

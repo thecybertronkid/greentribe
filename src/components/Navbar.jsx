@@ -27,7 +27,7 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-brand-beige/90 dark:bg-brand-dark-bg/90 backdrop-blur-lg border-b border-brand-gold/30 shadow-xs transition-colors duration-400">
+    <header className="sticky top-0 z-50 bg-brand-beige/95 dark:bg-[#08120C]/95 backdrop-blur-xl border-b border-brand-gold/30 shadow-md transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
