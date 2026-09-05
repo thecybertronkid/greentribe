@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -20,7 +21,14 @@ export default {
           "gold-dark": "#9A7B39",
           charcoal: "#1A1A1A",
           gray: "#555555",
-          "border-light": "#E6DEC8"
+          "border-light": "#E6DEC8",
+          // Dark mode extensions
+          "dark-bg": "#0A140F",
+          "dark-surface": "#12261C",
+          "dark-card": "#172E22",
+          "dark-border": "rgba(197, 160, 89, 0.25)",
+          "dark-text": "#FAF7F2",
+          "dark-muted": "#A3B899"
         }
       },
       fontFamily: {

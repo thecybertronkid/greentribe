@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Search, User, Heart, ShoppingBag, Menu, X, ChevronDown, Sparkles } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar({ activePage, setActivePage, onSearchClick }) {
   const { totalItems, openCart } = useCart();
@@ -23,19 +24,17 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
     { label: 'Trays & Platters', filter: 'Trays & Platters' },
     { label: 'Home Decor', filter: 'Home Decor' },
     { label: 'Kitchen & Dining', filter: 'Kitchen & Dining' },
-    { label: 'Table Organizers', filter: 'Table Organizers' },
-    { label: 'Wall Decor', filter: 'Wall Decor' },
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-brand-beige/90 backdrop-blur-lg border-b border-brand-gold/30 shadow-xs transition-all">
+    <header className="sticky top-0 z-40 bg-brand-beige/90 dark:bg-brand-dark-bg/90 backdrop-blur-lg border-b border-brand-gold/30 shadow-xs transition-colors duration-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
           {/* Mobile menu button */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-brand-charcoal hover:text-brand-gold focus:outline-none transition-colors"
+            className="md:hidden p-2 text-brand-charcoal dark:text-amber-200 hover:text-brand-gold focus:outline-none transition-colors"
             aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -47,17 +46,17 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
               G
             </div>
             <div className="flex flex-col">
-              <span className="brand-font-serif text-2xl sm:text-3xl font-bold tracking-tight text-brand-green select-none">
-                gree<span className="gold-gradient-text italic">N</span>trib<span className="text-brand-green">E</span>
+              <span className="brand-font-serif text-2xl sm:text-3xl font-bold tracking-tight text-brand-green dark:text-amber-100 select-none">
+                gree<span className="gold-gradient-text italic">N</span>trib<span className="text-brand-green dark:text-amber-100">E</span>
               </span>
-              <span className="text-[9px] uppercase tracking-widest text-brand-gold-dark font-sans -mt-1 font-bold flex items-center gap-1">
-                <Sparkles className="w-2.5 h-2.5 text-amber-600 inline" /> NECBDC Artisan Craft
+              <span className="text-[9px] uppercase tracking-widest text-brand-gold-dark dark:text-amber-400 font-sans -mt-1 font-bold flex items-center gap-1">
+                <Sparkles className="w-2.5 h-2.5 text-amber-600 dark:text-amber-400 inline" /> NECBDC Artisan Craft
               </span>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 text-xs font-bold tracking-widest text-brand-charcoal">
+          <nav className="hidden md:flex items-center space-x-8 text-xs font-bold tracking-widest text-brand-charcoal dark:text-amber-100">
             {navLinks.map((link) => {
               if (link.hasDropdown) {
                 return (
@@ -70,7 +69,7 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
                     <button
                       onClick={() => setActivePage('shop')}
                       className={`flex items-center gap-1 hover:text-brand-gold transition-colors ${
-                        activePage === 'shop' ? 'text-brand-green border-b-2 border-brand-gold pb-1' : ''
+                        activePage === 'shop' ? 'text-brand-green dark:text-amber-300 border-b-2 border-brand-gold pb-1' : ''
                       }`}
                     >
                       {link.name}
@@ -79,7 +78,7 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
 
                     {/* Dropdown Menu */}
                     {isCollectionsHovered && (
-                      <div className="absolute top-full left-0 w-56 bg-white/95 rounded-xl shadow-2xl border border-brand-gold/30 py-2 z-50 backdrop-blur-md animate-fadeIn">
+                      <div className="absolute top-full left-0 w-56 bg-white/95 dark:bg-brand-dark-card/95 rounded-xl shadow-2xl border border-brand-gold/30 py-2 z-50 backdrop-blur-md animate-fadeIn">
                         {collectionsDropdown.map((cat) => (
                           <button
                             key={cat.label}
@@ -87,10 +86,10 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
                               setActivePage('shop');
                               setIsCollectionsHovered(false);
                             }}
-                            className="w-full text-left px-4 py-2.5 text-xs text-brand-charcoal hover:bg-brand-beige hover:text-brand-green font-semibold transition-colors flex items-center justify-between"
+                            className="w-full text-left px-4 py-2.5 text-xs text-brand-charcoal dark:text-amber-100 hover:bg-brand-beige dark:hover:bg-emerald-950/60 hover:text-brand-green dark:hover:text-amber-300 font-semibold transition-colors flex items-center justify-between"
                           >
                             <span>{cat.label}</span>
-                            <span className="text-[10px] text-amber-700 font-normal">Explore →</span>
+                            <span className="text-[10px] text-amber-700 dark:text-amber-400 font-normal">Explore →</span>
                           </button>
                         ))}
                       </div>
@@ -103,8 +102,8 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
                 <button
                   key={link.name}
                   onClick={() => setActivePage(link.page)}
-                  className={`hover:text-amber-700 transition-colors relative py-2 ${
-                    activePage === link.page ? 'text-brand-green font-extrabold border-b-2 border-brand-gold pb-1' : ''
+                  className={`hover:text-amber-700 dark:hover:text-amber-300 transition-colors relative py-2 ${
+                    activePage === link.page ? 'text-brand-green dark:text-amber-300 font-extrabold border-b-2 border-brand-gold pb-1' : ''
                   }`}
                 >
                   {link.name}
@@ -114,11 +113,15 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
           </nav>
 
           {/* Actions right */}
-          <div className="flex items-center space-x-3 sm:space-x-4">
+          <div className="flex items-center space-x-2.5 sm:space-x-4">
+            
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
+
             {/* Search */}
             <button 
               onClick={onSearchClick}
-              className="p-2 text-brand-charcoal hover:text-brand-green transition-colors rounded-full hover:bg-brand-gold/10"
+              className="p-2 text-brand-charcoal dark:text-amber-100 hover:text-brand-green dark:hover:text-amber-300 transition-colors rounded-full hover:bg-brand-gold/10"
               title="Search Products"
             >
               <Search className="w-5 h-5" />
@@ -127,7 +130,7 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
             {/* Account */}
             <button 
               onClick={() => alert("Customer Account Login modal coming soon. Integrated with Shopify Customer Accounts.")}
-              className="hidden sm:flex p-2 text-brand-charcoal hover:text-brand-green transition-colors rounded-full hover:bg-brand-gold/10"
+              className="hidden sm:flex p-2 text-brand-charcoal dark:text-amber-100 hover:text-brand-green dark:hover:text-amber-300 transition-colors rounded-full hover:bg-brand-gold/10"
               title="Account"
             >
               <User className="w-5 h-5" />
@@ -136,7 +139,7 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
             {/* Wishlist */}
             <button 
               onClick={() => setActivePage('wishlist')}
-              className="p-2 text-brand-charcoal hover:text-brand-green transition-colors relative rounded-full hover:bg-brand-gold/10"
+              className="p-2 text-brand-charcoal dark:text-amber-100 hover:text-brand-green dark:hover:text-amber-300 transition-colors relative rounded-full hover:bg-brand-gold/10"
               title="Wishlist"
             >
               <Heart className="w-5 h-5" />
@@ -165,7 +168,7 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
 
       {/* Mobile navigation drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-brand-beige border-b border-brand-gold/30 px-4 pt-2 pb-6 space-y-3 animate-fadeIn">
+        <div className="md:hidden bg-brand-beige dark:bg-brand-dark-surface border-b border-brand-gold/30 px-4 pt-2 pb-6 space-y-3 animate-fadeIn">
           {navLinks.map((link) => (
             <button
               key={link.name}
@@ -174,7 +177,7 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
                 setIsMobileMenuOpen(false);
               }}
               className={`block w-full text-left py-2.5 px-4 text-sm font-bold rounded-xl ${
-                activePage === link.page ? 'bg-brand-green text-amber-200' : 'text-brand-charcoal hover:bg-black/5'
+                activePage === link.page ? 'bg-brand-green text-amber-200' : 'text-brand-charcoal dark:text-amber-100 hover:bg-black/5'
               }`}
             >
               {link.name}
