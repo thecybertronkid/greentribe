@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #FAF7F2;
+    color: #1A1A1A;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Animated Gradient Mesh Background */
+.animated-mesh-bg {
+  background: linear-gradient(-45deg, #FAF7F2, #F2EBE0, #EFE6D8, #FAF7F2);
+  background-size: 400% 400%;
+  animation: gradientBg 14s ease infinite;
+}
+
+.emerald-animated-bg {
+  background: linear-gradient(-45deg, #0F291E, #153B2C, #091B13, #1A4433);
+  background-size: 300% 300%;
+  animation: gradientBg 10s ease infinite;
+}
+
+/* Gold Gradient Styling */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #E6C265 0%, #C5A059 50%, #9A7B39 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C5A059 0%, #E6C265 50%, #9A7B39 100%);
+}
+
+.emerald-gradient-bg {
+  background: linear-gradient(135deg, #0F291E 0%, #153B2C 60%, #0A1C14 100%);
+}
+
+/* Luxury 3D Elevation & Glowing Hover Shadows */
+.luxury-card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(15, 41, 30, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card-shadow:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 22px 45px -12px rgba(15, 41, 30, 0.18), 0 0 25px 2px rgba(197, 160, 89, 0.2);
+  border-color: rgba(197, 160, 89, 0.6);
+}
+
+/* Interactive Spotlight Cursor Overlay */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* Shimmer Button Effect */
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  transform: rotate(30deg) translateX(-100%);
+  transition: transform 0.8s ease;
+}
+.shimmer-btn:hover::after {
+  transform: rotate(30deg) translateX(100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F2EBE0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0F291E;
+}
+
+.brand-font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
