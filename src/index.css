@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Bamboo Leaf Cursors */
+html, body, div, p, span, h1, h2, h3, h4, h5, h6, img {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="%23C5A059" stroke="%230F291E" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z"/></svg>') 2 2, auto;
+}
+
+a, button, [role="button"], input, select, textarea, label, .cursor-pointer {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23E6C265" stroke="%230F291E" stroke-width="1.8"><path d="M12 2C6.5 2 2 6.5 2 12C7.5 12 12 16.5 12 22C12 16.5 16.5 12 22 12C16.5 12 12 7.5 12 2Z"/></svg>') 2 2, pointer !important;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -38,7 +47,7 @@ html.dark .animated-mesh-bg {
   animation: gradientBg 10s ease infinite;
 }
 
-/* Gold Gradient Styling - High contrast radiant gold */
+/* Gold Gradient Styling */
 .gold-gradient-text {
   background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #9A7B39 100%);
   -webkit-background-clip: text;
