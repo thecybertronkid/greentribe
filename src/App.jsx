@@ -13,7 +13,6 @@ import ToastNotification from './components/ToastNotification';
 import ArtisanConciergeWidget from './components/ArtisanConciergeWidget';
 import MobileBottomNav from './components/MobileBottomNav';
 import BambooForestBackground from './components/BambooForestBackground';
-import CustomBambooCursor from './components/CustomBambooCursor';
 
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
@@ -57,9 +56,6 @@ export default function App() {
         <WishlistProvider>
           <div className="min-h-screen flex flex-col font-sans bg-brand-beige dark:bg-brand-dark-bg text-brand-charcoal dark:text-brand-dark-text selection:bg-brand-green selection:text-white pb-14 md:pb-0 relative transition-colors duration-400">
             
-            {/* Custom Trailing Bamboo Leaf Cursor */}
-            <CustomBambooCursor />
-
             {/* Animated Waving Bamboo Forest Background */}
             <BambooForestBackground />
 

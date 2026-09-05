@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 /* Custom 3D Green Pointer Cursor */
-html, body, div, p, span, h1, h2, h3, h4, h5, h6, img {
+*, html, body {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="34" viewBox="0 0 28 34" fill="none"><path d="M4 2L24 20L15 21L21 31L16.5 33L10.5 23L4 28V2Z" fill="%231B4D0F"/><path d="M2 0L22 18L13 19L19 29L14.5 31L8.5 21L2 26V0Z" fill="%236BB422" stroke="%2322520F" stroke-width="1.5"/><rect x="4.5" y="4.5" width="3" height="12" rx="1.5" fill="white" opacity="0.95"/><circle cx="6" cy="19.5" r="1.5" fill="white" opacity="0.95"/></svg>') 2 0, auto;
 }
 
-a, button, [role="button"], input, select, textarea, label, .cursor-pointer {
+a, button, [role="button"], input, select, textarea, label, .cursor-pointer, a *, button * {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="34" viewBox="0 0 28 34" fill="none"><path d="M4 2L24 20L15 21L21 31L16.5 33L10.5 23L4 28V2Z" fill="%231B4D0F"/><path d="M2 0L22 18L13 19L19 29L14.5 31L8.5 21L2 26V0Z" fill="%2385D92C" stroke="%2322520F" stroke-width="1.5"/><rect x="4.5" y="4.5" width="3" height="12" rx="1.5" fill="white" opacity="0.95"/><circle cx="6" cy="19.5" r="1.5" fill="white" opacity="0.95"/></svg>') 2 0, pointer !important;
 }
 
