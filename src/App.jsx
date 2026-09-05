@@ -54,26 +54,26 @@ export default function App() {
     <ThemeProvider>
       <CartProvider>
         <WishlistProvider>
-          <div className="min-h-screen flex flex-col font-sans bg-brand-beige dark:bg-brand-dark-bg text-brand-charcoal dark:text-brand-dark-text selection:bg-brand-green selection:text-white pb-14 md:pb-0 relative overflow-x-hidden transition-colors duration-400">
+          <div className="min-h-screen flex flex-col font-sans bg-brand-beige dark:bg-brand-dark-bg text-brand-charcoal dark:text-brand-dark-text selection:bg-brand-green selection:text-white pb-14 md:pb-0 relative transition-colors duration-400">
             
             {/* Animated Waving Bamboo Forest Background */}
             <BambooForestBackground />
 
-            {/* Announcement Bar */}
-            <AnnouncementBar />
+            {/* Persistent Top Header Block */}
+            <div className="fixed top-0 inset-x-0 z-50">
+              <AnnouncementBar />
+              <Navbar 
+                activePage={activePage} 
+                setActivePage={(page) => {
+                  if (page === 'shop') setSearchQuery('');
+                  setActivePage(page);
+                }} 
+                onSearchClick={() => setIsSearchOpen(true)}
+              />
+            </div>
 
-            {/* Sticky Navigation Bar */}
-            <Navbar 
-              activePage={activePage} 
-              setActivePage={(page) => {
-                if (page === 'shop') setSearchQuery('');
-                setActivePage(page);
-              }} 
-              onSearchClick={() => setIsSearchOpen(true)}
-            />
-
-            {/* Main View Area */}
-            <main className="flex-1 relative z-10">
+            {/* Main View Area with Top Padding for Fixed Navbar */}
+            <main className="flex-1 relative z-10 pt-28 sm:pt-32">
               {activePage === 'home' && (
                 <HomePage 
                   onNavigate={setActivePage}
