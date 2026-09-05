@@ -36,12 +36,12 @@ export default function ProductCard({ product, onSelectProduct, onQuickView, onS
 
   return (
     <div 
-      className="group bg-white rounded-2xl overflow-hidden border border-brand-border-light/80 luxury-card-shadow transition-all duration-500 flex flex-col h-full relative"
+      className="group bg-white dark:bg-brand-dark-card rounded-2xl overflow-hidden border border-brand-border-light/80 dark:border-brand-gold/30 luxury-card-shadow transition-all duration-500 flex flex-col h-full relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Media Box */}
-      <div className="relative aspect-square overflow-hidden bg-brand-beige-dark/30 cursor-pointer" onClick={() => onSelectProduct(product)}>
+      <div className="relative aspect-square overflow-hidden bg-brand-beige-dark/30 dark:bg-emerald-950/40 cursor-pointer" onClick={() => onSelectProduct(product)}>
         <img 
           src={product.image} 
           alt={product.title} 
@@ -50,7 +50,7 @@ export default function ProductCard({ product, onSelectProduct, onQuickView, onS
         />
 
         {/* Subtle overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
@@ -72,7 +72,7 @@ export default function ProductCard({ product, onSelectProduct, onQuickView, onS
           className={`absolute top-3 right-3 p-2.5 rounded-full backdrop-blur-md transition-all duration-300 z-10 ${
             isLiked 
               ? 'bg-rose-50 text-rose-600 shadow-md scale-110' 
-              : 'bg-white/80 text-gray-600 hover:text-rose-600 hover:bg-white shadow-sm hover:scale-110'
+              : 'bg-white/80 dark:bg-emerald-950/80 text-gray-600 dark:text-amber-200 hover:text-rose-600 hover:bg-white shadow-sm hover:scale-110'
           }`}
           title={isLiked ? "Remove from wishlist" : "Add to wishlist"}
         >
@@ -86,7 +86,7 @@ export default function ProductCard({ product, onSelectProduct, onQuickView, onS
               e.stopPropagation();
               onQuickView(product);
             }}
-            className="flex-1 bg-white/95 hover:bg-white text-brand-charcoal text-xs font-bold py-2.5 px-3 rounded-xl shadow-lg backdrop-blur-md flex items-center justify-center gap-1.5 transition-all hover:text-brand-green"
+            className="flex-1 bg-white/95 dark:bg-emerald-950/95 text-brand-charcoal dark:text-amber-100 text-xs font-bold py-2.5 px-3 rounded-xl shadow-lg backdrop-blur-md flex items-center justify-center gap-1.5 transition-all hover:text-brand-green dark:hover:text-amber-300 border border-brand-gold/30"
           >
             <Eye className="w-3.5 h-3.5" /> Quick View
           </button>
@@ -104,26 +104,26 @@ export default function ProductCard({ product, onSelectProduct, onQuickView, onS
       {/* Content Info */}
       <div className="p-5 flex flex-col justify-between flex-grow cursor-pointer" onClick={() => onSelectProduct(product)}>
         <div>
-          <span className="text-[10px] uppercase font-bold tracking-widest text-brand-gold-dark">
+          <span className="text-[10px] uppercase font-bold tracking-widest text-brand-gold-dark dark:text-amber-400">
             {product.material} • {product.category}
           </span>
-          <h3 className="brand-font-serif text-base font-bold text-brand-charcoal mt-1 group-hover:text-brand-green transition-colors line-clamp-1">
+          <h3 className="brand-font-serif text-base font-bold text-brand-charcoal dark:text-amber-100 mt-1 group-hover:text-brand-green dark:group-hover:text-amber-300 transition-colors line-clamp-1">
             {product.title}
           </h3>
         </div>
 
-        <div className="mt-4 flex items-baseline justify-between pt-3 border-t border-brand-border-light/60">
+        <div className="mt-4 flex items-baseline justify-between pt-3 border-t border-brand-border-light/60 dark:border-emerald-800/60">
           <div className="flex items-baseline gap-2">
-            <span className="text-base font-bold text-brand-charcoal">
+            <span className="text-base font-bold text-brand-charcoal dark:text-amber-200">
               ₹{product.price.toLocaleString('en-IN')}.00
             </span>
             {product.originalPrice && (
-              <span className="text-xs text-brand-gray line-through">
+              <span className="text-xs text-brand-gray dark:text-emerald-300/60 line-through">
                 ₹{product.originalPrice.toLocaleString('en-IN')}
               </span>
             )}
           </div>
-          <span className="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60 flex items-center gap-1">
+          <span className="text-[11px] font-bold text-emerald-800 dark:text-amber-300 bg-emerald-50 dark:bg-emerald-950 px-2 py-0.5 rounded-md border border-emerald-200/60 dark:border-amber-500/30 flex items-center gap-1">
             <Star className="w-3 h-3 fill-amber-400 text-amber-400" /> {product.rating}
           </span>
         </div>

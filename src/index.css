@@ -15,7 +15,7 @@
   }
   
   html.dark body {
-    background-color: #0A140F;
+    background-color: #08120C;
     color: #FAF7F2;
   }
 }
@@ -28,7 +28,7 @@
 }
 
 html.dark .animated-mesh-bg {
-  background: linear-gradient(-45deg, #0A140F, #12261C, #0F1F17, #0A140F);
+  background: linear-gradient(-45deg, #08120C, #10241A, #0C1A13, #08120C);
   background-size: 400% 400%;
 }
 
@@ -38,9 +38,15 @@ html.dark .animated-mesh-bg {
   animation: gradientBg 10s ease infinite;
 }
 
-/* Gold Gradient Styling */
+/* Gold Gradient Styling - High contrast radiant gold */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #E6C265 0%, #C5A059 50%, #9A7B39 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #9A7B39 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.dark .gold-gradient-text {
+  background: linear-gradient(135deg, #FFF3D1 0%, #F5D77F 50%, #E6C265 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -53,6 +59,10 @@ html.dark .animated-mesh-bg {
   background: linear-gradient(135deg, #0F291E 0%, #153B2C 60%, #0A1C14 100%);
 }
 
+html.dark .emerald-gradient-bg {
+  background: linear-gradient(135deg, #123023 0%, #1A4432 60%, #0C2118 100%);
+}
+
 /* Luxury 3D Elevation & Glowing Hover Shadows */
 .luxury-card-shadow {
   box-shadow: 0 10px 30px -10px rgba(15, 41, 30, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
@@ -60,8 +70,8 @@ html.dark .animated-mesh-bg {
 }
 
 html.dark .luxury-card-shadow {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  background-color: #172E22;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+  background-color: #12261C;
   border-color: rgba(197, 160, 89, 0.25);
 }
 
@@ -72,55 +82,8 @@ html.dark .luxury-card-shadow {
 }
 
 html.dark .luxury-card-shadow:hover {
-  box-shadow: 0 22px 45px -12px rgba(0, 0, 0, 0.8), 0 0 25px 2px rgba(197, 160, 89, 0.3);
+  box-shadow: 0 22px 45px -12px rgba(0, 0, 0, 0.9), 0 0 25px 2px rgba(230, 194, 101, 0.25);
   border-color: rgba(230, 194, 101, 0.7);
-}
-
-/* Interactive Spotlight Cursor Overlay */
-.spotlight-card {
-  position: relative;
-  overflow: hidden;
-}
-.spotlight-card::before {
-  content: '';
-  position: absolute;
-  top: var(--mouse-y, 50%);
-  left: var(--mouse-x, 50%);
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  transition: opacity 0.3s;
-  opacity: 0;
-}
-.spotlight-card:hover::before {
-  opacity: 1;
-}
-
-/* Shimmer Button Effect */
-.shimmer-btn {
-  position: relative;
-  overflow: hidden;
-}
-.shimmer-btn::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 70%
-  );
-  transform: rotate(30deg) translateX(-100%);
-  transition: transform 0.8s ease;
-}
-.shimmer-btn:hover::after {
-  transform: rotate(30deg) translateX(100%);
 }
 
 /* Custom scrollbar */
@@ -132,7 +95,7 @@ html.dark .luxury-card-shadow:hover {
   background: #F2EBE0;
 }
 html.dark ::-webkit-scrollbar-track {
-  background: #0A140F;
+  background: #08120C;
 }
 ::-webkit-scrollbar-thumb {
   background: #C5A059;

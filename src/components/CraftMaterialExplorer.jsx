@@ -33,22 +33,22 @@ export default function CraftMaterialExplorer({ onNavigate, onSelectProduct }) {
 
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-white rounded-3xl p-8 sm:p-12 border border-brand-gold/40 shadow-xl space-y-10 relative overflow-hidden">
+      <div className="bg-white dark:bg-brand-dark-card rounded-3xl p-8 sm:p-12 border border-brand-gold/40 shadow-xl space-y-10 relative overflow-hidden transition-colors duration-400">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-brand-border-light pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-brand-border-light dark:border-emerald-800/60 pb-6">
           <div>
-            <span className="text-xs font-bold text-amber-700 uppercase tracking-widest flex items-center gap-1.5">
-              <Compass className="w-4 h-4 text-amber-600 animate-spin" style={{ animationDuration: '20s' }} />
+            <span className="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest flex items-center gap-1.5">
+              <Compass className="w-4 h-4 text-amber-600 dark:text-amber-400 animate-spin" style={{ animationDuration: '20s' }} />
               Interactive Material Guide
             </span>
-            <h2 className="brand-font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal mt-1">
+            <h2 className="brand-font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal dark:text-amber-100 mt-1">
               Explore Our Indigenous Craft Materials
             </h2>
           </div>
 
           {/* Interactive Material Pills */}
-          <div className="flex items-center gap-2 bg-brand-beige p-1.5 rounded-2xl border border-brand-gold/30">
+          <div className="flex items-center gap-2 bg-brand-beige dark:bg-emerald-950 p-1.5 rounded-2xl border border-brand-gold/30">
             {['Bamboo', 'Cane'].map((mat) => (
               <button
                 key={mat}
@@ -56,7 +56,7 @@ export default function CraftMaterialExplorer({ onNavigate, onSelectProduct }) {
                 className={`text-xs font-bold px-6 py-2.5 rounded-xl transition-all ${
                   activeMat === mat 
                     ? 'emerald-gradient-bg text-amber-200 shadow-md scale-105' 
-                    : 'text-brand-gray hover:text-brand-charcoal hover:bg-white'
+                    : 'text-brand-gray dark:text-emerald-200/80 hover:text-brand-charcoal dark:hover:text-amber-200 hover:bg-white dark:hover:bg-emerald-900/60'
                 }`}
               >
                 {mat}
@@ -69,7 +69,7 @@ export default function CraftMaterialExplorer({ onNavigate, onSelectProduct }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center animate-fadeIn key={activeMat}">
           
           {/* Media View */}
-          <div className="lg:col-span-5 relative aspect-square rounded-2xl overflow-hidden shadow-lg border border-brand-gold/30 group bg-brand-beige-dark/30">
+          <div className="lg:col-span-5 relative aspect-square rounded-2xl overflow-hidden shadow-lg border border-brand-gold/30 group bg-brand-beige-dark/30 dark:bg-emerald-950/50">
             <img 
               src={current.image} 
               alt={current.title} 
@@ -87,36 +87,36 @@ export default function CraftMaterialExplorer({ onNavigate, onSelectProduct }) {
           {/* Metrics & Info */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <span className="text-xs font-bold text-brand-green uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-md border border-emerald-200">
+              <span className="text-xs font-bold text-brand-green dark:text-amber-300 uppercase tracking-wider bg-emerald-50 dark:bg-emerald-950 px-3 py-1 rounded-md border border-emerald-200 dark:border-amber-500/30">
                 {current.tagline}
               </span>
-              <h3 className="brand-font-serif text-2xl font-bold text-brand-charcoal mt-3">
+              <h3 className="brand-font-serif text-2xl font-bold text-brand-charcoal dark:text-amber-100 mt-3">
                 {current.title}
               </h3>
-              <p className="text-xs sm:text-sm text-brand-gray leading-relaxed mt-3">
+              <p className="text-xs sm:text-sm text-brand-gray dark:text-emerald-100/90 leading-relaxed mt-3 font-medium">
                 {current.desc}
               </p>
             </div>
 
             {/* Metrics Bar */}
-            <div className="grid grid-cols-3 gap-4 bg-brand-beige p-4 rounded-2xl border border-brand-gold/20 text-center">
+            <div className="grid grid-cols-3 gap-4 bg-brand-beige dark:bg-emerald-950/60 p-4 rounded-2xl border border-brand-gold/20 text-center">
               <div>
-                <span className="text-[10px] uppercase font-bold text-brand-gray">Flex Strength</span>
-                <span className="brand-font-serif text-lg font-bold text-brand-green block mt-0.5">{current.tensile}</span>
+                <span className="text-[10px] uppercase font-bold text-brand-gray dark:text-emerald-200/80">Flex Strength</span>
+                <span className="brand-font-serif text-lg font-bold text-brand-green dark:text-amber-300 block mt-0.5">{current.tensile}</span>
               </div>
-              <div className="border-x border-brand-border-light">
-                <span className="text-[10px] uppercase font-bold text-brand-gray">Expected Lifespan</span>
-                <span className="brand-font-serif text-lg font-bold text-amber-700 block mt-0.5">{current.durability}</span>
+              <div className="border-x border-brand-border-light dark:border-emerald-800/60">
+                <span className="text-[10px] uppercase font-bold text-brand-gray dark:text-emerald-200/80">Expected Lifespan</span>
+                <span className="brand-font-serif text-lg font-bold text-amber-700 dark:text-amber-400 block mt-0.5">{current.durability}</span>
               </div>
               <div>
-                <span className="text-[10px] uppercase font-bold text-brand-gray">Eco Impact</span>
-                <span className="brand-font-serif text-xs font-bold text-emerald-800 block mt-1">{current.ecoScore}</span>
+                <span className="text-[10px] uppercase font-bold text-brand-gray dark:text-emerald-200/80">Eco Impact</span>
+                <span className="brand-font-serif text-xs font-bold text-emerald-800 dark:text-emerald-300 block mt-1">{current.ecoScore}</span>
               </div>
             </div>
 
             {/* Matching Products Teaser */}
             <div className="space-y-3 pt-2">
-              <span className="text-xs font-bold text-brand-charcoal uppercase tracking-wider">
+              <span className="text-xs font-bold text-brand-charcoal dark:text-amber-100 uppercase tracking-wider">
                 Products Crafted With {activeMat}:
               </span>
               <div className="grid grid-cols-3 gap-3">
@@ -124,12 +124,12 @@ export default function CraftMaterialExplorer({ onNavigate, onSelectProduct }) {
                   <div 
                     key={p.id}
                     onClick={() => onSelectProduct(p)}
-                    className="bg-brand-beige/60 hover:bg-emerald-50 p-2.5 rounded-xl border border-brand-border-light cursor-pointer transition-all hover:scale-105 flex items-center gap-2 group"
+                    className="bg-brand-beige/60 dark:bg-emerald-950/40 hover:bg-emerald-50 dark:hover:bg-emerald-900/60 p-2.5 rounded-xl border border-brand-border-light dark:border-emerald-800/60 cursor-pointer transition-all hover:scale-105 flex items-center gap-2 group"
                   >
                     <img src={p.image} alt={p.title} className="w-10 h-10 rounded-lg object-cover shrink-0 bg-white" />
                     <div className="min-w-0">
-                      <h4 className="text-[11px] font-bold text-brand-charcoal truncate group-hover:text-brand-green">{p.title}</h4>
-                      <span className="text-[10px] text-brand-green font-semibold">₹{p.price}</span>
+                      <h4 className="text-[11px] font-bold text-brand-charcoal dark:text-amber-100 truncate group-hover:text-brand-green dark:group-hover:text-amber-300">{p.title}</h4>
+                      <span className="text-[10px] text-brand-green dark:text-amber-300 font-semibold">₹{p.price}</span>
                     </div>
                   </div>
                 ))}

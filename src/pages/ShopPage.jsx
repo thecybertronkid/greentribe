@@ -61,27 +61,27 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
       {/* Page Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 py-4 border-b border-brand-gold/30">
         <div>
-          <h1 className="brand-font-serif text-3xl font-bold text-brand-charcoal flex items-center gap-2">
-            Shop Catalog <Sparkles className="w-5 h-5 text-amber-600" />
+          <h1 className="brand-font-serif text-3xl font-bold text-brand-charcoal dark:text-amber-100 flex items-center gap-2">
+            Shop Catalog <Sparkles className="w-5 h-5 text-amber-600 dark:text-amber-400" />
           </h1>
           {searchQuery && (
-            <p className="text-xs text-brand-gray mt-1">
-              Search results for "<strong className="text-brand-green">{searchQuery}</strong>"
+            <p className="text-xs text-brand-gray dark:text-emerald-200/80 mt-1">
+              Search results for "<strong className="text-brand-green dark:text-amber-300">{searchQuery}</strong>"
             </p>
           )}
         </div>
 
         <div className="flex flex-wrap items-center justify-between md:justify-end gap-4 text-xs">
-          <span className="text-brand-gray font-semibold">
+          <span className="text-brand-gray dark:text-emerald-200/80 font-semibold">
             Showing 1 - {filteredProducts.length} of {PRODUCTS.length} results
           </span>
 
           <div className="flex items-center gap-2">
-            <span className="text-brand-gray font-semibold hidden sm:inline">Sort by:</span>
+            <span className="text-brand-gray dark:text-emerald-200/80 font-semibold hidden sm:inline">Sort by:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="bg-white border border-brand-gold/30 rounded-xl px-3 py-2 font-bold text-brand-charcoal focus:outline-none focus:ring-1 focus:ring-brand-gold cursor-pointer shadow-xs"
+              className="bg-white dark:bg-emerald-950 border border-brand-gold/30 rounded-xl px-3 py-2 font-bold text-brand-charcoal dark:text-amber-100 focus:outline-none focus:ring-1 focus:ring-brand-gold cursor-pointer shadow-xs"
             >
               <option value="bestselling">Best selling</option>
               <option value="price-low">Price: Low to High</option>
@@ -90,17 +90,17 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
             </select>
           </div>
 
-          <div className="hidden lg:flex items-center bg-white border border-brand-gold/30 rounded-xl p-1 space-x-1 shadow-xs">
+          <div className="hidden lg:flex items-center bg-white dark:bg-brand-dark-card border border-brand-gold/30 rounded-xl p-1 space-x-1 shadow-xs">
             <button
               onClick={() => setGridCols(3)}
-              className={`p-1.5 rounded-lg transition-colors ${gridCols === 3 ? 'emerald-gradient-bg text-amber-200' : 'text-brand-gray hover:text-brand-charcoal'}`}
+              className={`p-1.5 rounded-lg transition-colors ${gridCols === 3 ? 'emerald-gradient-bg text-amber-200' : 'text-brand-gray dark:text-emerald-200/80 hover:text-brand-charcoal dark:hover:text-amber-100'}`}
               title="3 Columns Grid"
             >
               <Grid className="w-4 h-4" />
             </button>
             <button
               onClick={() => setGridCols(4)}
-              className={`p-1.5 rounded-lg transition-colors ${gridCols === 4 ? 'emerald-gradient-bg text-amber-200' : 'text-brand-gray hover:text-brand-charcoal'}`}
+              className={`p-1.5 rounded-lg transition-colors ${gridCols === 4 ? 'emerald-gradient-bg text-amber-200' : 'text-brand-gray dark:text-emerald-200/80 hover:text-brand-charcoal dark:hover:text-amber-100'}`}
               title="4 Columns Grid"
             >
               <LayoutGrid className="w-4 h-4" />
@@ -109,9 +109,9 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
 
           <button
             onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-            className="md:hidden flex items-center gap-1.5 bg-white border border-brand-gold/30 px-3 py-2 rounded-xl text-brand-charcoal font-bold shadow-xs"
+            className="md:hidden flex items-center gap-1.5 bg-white dark:bg-brand-dark-card border border-brand-gold/30 px-3 py-2 rounded-xl text-brand-charcoal dark:text-amber-100 font-bold shadow-xs"
           >
-            <SlidersHorizontal className="w-4 h-4 text-brand-green" /> Filters
+            <SlidersHorizontal className="w-4 h-4 text-brand-green dark:text-amber-300" /> Filters
           </button>
         </div>
       </div>
@@ -123,8 +123,8 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
         <aside className={`md:col-span-3 space-y-6 ${isMobileFilterOpen ? 'block animate-fadeIn' : 'hidden md:block'}`}>
           
           {/* CATEGORIES Filter */}
-          <div className="space-y-3 bg-white p-6 rounded-2xl border border-brand-gold/30 shadow-xs">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-brand-charcoal border-b border-brand-border-light pb-2">
+          <div className="space-y-3 bg-white dark:bg-brand-dark-card p-6 rounded-2xl border border-brand-gold/30 shadow-xs transition-colors duration-400">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-brand-charcoal dark:text-amber-300 border-b border-brand-border-light dark:border-emerald-800/60 pb-2">
               Categories
             </h3>
             <ul className="space-y-1 text-xs">
@@ -142,11 +142,11 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
                       className={`w-full text-left py-2 px-3 rounded-xl font-bold transition-all flex justify-between items-center ${
                         isSelected 
                           ? 'emerald-gradient-bg text-amber-200 shadow-sm' 
-                          : 'text-brand-gray hover:text-brand-charcoal hover:bg-brand-beige'
+                          : 'text-brand-gray dark:text-emerald-200/80 hover:text-brand-charcoal dark:hover:text-amber-100 hover:bg-brand-beige dark:hover:bg-emerald-950/60'
                       }`}
                     >
                       <span>{cat}</span>
-                      <span className={`text-[10px] font-bold ${isSelected ? 'text-amber-300' : 'text-gray-400'}`}>({count})</span>
+                      <span className={`text-[10px] font-bold ${isSelected ? 'text-amber-300' : 'text-gray-400 dark:text-emerald-400/60'}`}>({count})</span>
                     </button>
                   </li>
                 );
@@ -155,13 +155,13 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
           </div>
 
           {/* FILTER BY MATERIAL */}
-          <div className="space-y-3 bg-white p-6 rounded-2xl border border-brand-gold/30 shadow-xs">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-brand-charcoal border-b border-brand-border-light pb-2">
+          <div className="space-y-3 bg-white dark:bg-brand-dark-card p-6 rounded-2xl border border-brand-gold/30 shadow-xs transition-colors duration-400">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-brand-charcoal dark:text-amber-300 border-b border-brand-border-light dark:border-emerald-800/60 pb-2">
               Filter By Material
             </h3>
             <div className="space-y-2.5 text-xs">
               {MATERIALS.map((mat) => (
-                <label key={mat} className="flex items-center gap-3 cursor-pointer text-brand-charcoal hover:text-brand-green font-bold">
+                <label key={mat} className="flex items-center gap-3 cursor-pointer text-brand-charcoal dark:text-amber-100 hover:text-brand-green dark:hover:text-amber-300 font-bold">
                   <input
                     type="checkbox"
                     checked={selectedMaterials.includes(mat)}
@@ -175,8 +175,8 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
           </div>
 
           {/* PRICE SLIDER */}
-          <div className="space-y-4 bg-white p-6 rounded-2xl border border-brand-gold/30 shadow-xs">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-brand-charcoal border-b border-brand-border-light pb-2">
+          <div className="space-y-4 bg-white dark:bg-brand-dark-card p-6 rounded-2xl border border-brand-gold/30 shadow-xs transition-colors duration-400">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-brand-charcoal dark:text-amber-300 border-b border-brand-border-light dark:border-emerald-800/60 pb-2">
               Price Range
             </h3>
             
@@ -190,9 +190,9 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
                 onChange={(e) => setMaxPrice(Number(e.target.value))}
                 className="w-full accent-brand-green cursor-pointer"
               />
-              <div className="flex justify-between items-center text-xs text-brand-gray font-bold">
+              <div className="flex justify-between items-center text-xs text-brand-gray dark:text-emerald-200/80 font-bold">
                 <span>₹0</span>
-                <span className="text-brand-green font-extrabold">₹{maxPrice.toLocaleString('en-IN')}</span>
+                <span className="text-brand-green dark:text-amber-300 font-extrabold">₹{maxPrice.toLocaleString('en-IN')}</span>
               </div>
             </div>
 
@@ -207,7 +207,7 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
           {/* RESET FILTERS */}
           <button
             onClick={resetFilters}
-            className="w-full flex items-center justify-center gap-1.5 text-xs text-brand-gray hover:text-brand-green py-2 transition-colors font-bold"
+            className="w-full flex items-center justify-center gap-1.5 text-xs text-brand-gray dark:text-emerald-200/80 hover:text-brand-green dark:hover:text-amber-300 py-2 transition-colors font-bold"
           >
             <RotateCcw className="w-3.5 h-3.5" /> Reset All Filters
           </button>
@@ -217,9 +217,9 @@ export default function ShopPage({ onNavigate, onSelectProduct, onQuickView, sea
         {/* Right Product Grid */}
         <main className="md:col-span-9 space-y-6">
           {filteredProducts.length === 0 ? (
-            <div className="bg-white rounded-3xl p-12 text-center space-y-4 border border-brand-gold/30 shadow-sm">
-              <h3 className="brand-font-serif text-2xl font-bold text-brand-charcoal">No products match your filters</h3>
-              <p className="text-xs text-brand-gray">Try adjusting your price range or clearing material selections.</p>
+            <div className="bg-white dark:bg-brand-dark-card rounded-3xl p-12 text-center space-y-4 border border-brand-gold/30 shadow-sm">
+              <h3 className="brand-font-serif text-2xl font-bold text-brand-charcoal dark:text-amber-100">No products match your filters</h3>
+              <p className="text-xs text-brand-gray dark:text-emerald-200/80">Try adjusting your price range or clearing material selections.</p>
               <button
                 onClick={resetFilters}
                 className="emerald-gradient-bg text-amber-200 text-xs font-bold px-6 py-3 rounded-xl"
