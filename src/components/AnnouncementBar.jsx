@@ -1,23 +1,39 @@
 import React from 'react';
-import { Sparkles, ShieldCheck } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export default function AnnouncementBar() {
-  return (
-    <div className="bg-brand-green text-white text-xs py-2 px-4 flex justify-between items-center transition-colors">
-      <div className="hidden md:flex items-center gap-2 text-emerald-200">
-        <ShieldCheck className="w-3.5 h-3.5" />
-        <span>Official Partner of NECBDC (North East Cane & Bamboo Development Council)</span>
-      </div>
-      
-      <div className="mx-auto md:mx-0 flex items-center gap-1.5 font-medium tracking-wide">
-        <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
-        <span>Free Shipping on Orders Over ₹1,999 | 100% Handcrafted Artisanal Heritage</span>
-      </div>
+  const marqueeItems = Array(6).fill("Free Shipping on Orders Over ₹1,999 | 100% Handcrafted Artisanal Heritage");
 
-      <div className="hidden md:flex items-center gap-4 text-emerald-100">
-        <span>INR (₹)</span>
-        <span className="opacity-40">|</span>
-        <a href="#contact" className="hover:underline">Need Help?</a>
+  return (
+    <div className="bg-brand-green text-white text-[11px] sm:text-xs py-2 overflow-hidden relative border-b border-brand-gold/30 select-none shadow-sm">
+      <div className="flex whitespace-nowrap animate-marquee">
+        
+        {/* Track 1 */}
+        <div className="flex items-center gap-8 px-4 font-bold tracking-widest text-amber-200">
+          {marqueeItems.map((text, i) => (
+            <React.Fragment key={`track1-${i}`}>
+              <span className="flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse shrink-0" />
+                {text}
+              </span>
+              <span className="text-amber-400/60 font-normal">✦</span>
+            </React.Fragment>
+          ))}
+        </div>
+
+        {/* Track 2 (Duplicate for Seamless Loop) */}
+        <div className="flex items-center gap-8 px-4 font-bold tracking-widest text-amber-200" aria-hidden="true">
+          {marqueeItems.map((text, i) => (
+            <React.Fragment key={`track2-${i}`}>
+              <span className="flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse shrink-0" />
+                {text}
+              </span>
+              <span className="text-amber-400/60 font-normal">✦</span>
+            </React.Fragment>
+          ))}
+        </div>
+
       </div>
     </div>
   );

@@ -47,6 +47,22 @@ html.dark .animated-mesh-bg {
   animation: gradientBg 10s ease infinite;
 }
 
+/* Continuous Infinite Marquee Motion */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Gold Gradient Styling */
 .gold-gradient-text {
   background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #9A7B39 100%);
