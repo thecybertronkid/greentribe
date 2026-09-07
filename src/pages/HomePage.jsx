@@ -49,7 +49,7 @@ export default function HomePage({ onNavigate, onSelectProduct, onQuickView, onO
     <div className="space-y-24 pb-24">
       
       {/* Luxury Hero Section with Animated Mesh */}
-      <section className="relative overflow-hidden animated-mesh-bg border-b border-brand-gold/30 pt-10 pb-20 lg:py-28 transition-colors duration-400">
+      <section className="relative overflow-hidden animated-mesh-bg border-b border-brand-gold/30 pt-4 sm:pt-6 pb-16 lg:pb-24 transition-colors duration-400">
         
         {/* Animated Background Ambient Light Blobs */}
         <div className="absolute top-10 left-10 w-72 h-72 bg-amber-200/30 dark:bg-amber-500/15 rounded-full blur-3xl animate-blob pointer-events-none" />

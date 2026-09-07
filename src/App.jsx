@@ -73,7 +73,7 @@ export default function App() {
             </div>
 
             {/* Main View Area with Top Padding for Fixed Navbar */}
-            <main className="flex-1 relative z-10 pt-28 sm:pt-32">
+            <main className="flex-1 relative z-10 pt-28">
               {activePage === 'home' && (
                 <HomePage 
                   onNavigate={setActivePage}
