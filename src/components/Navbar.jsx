@@ -13,7 +13,7 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
   const navLinks = [
     { name: 'HOME', page: 'home' },
     { name: 'SHOP', page: 'shop' },
-    { name: 'COLLECTIONS', page: 'shop', hasDropdown: true },
+    { name: 'COLLECTIONS', page: 'collections', hasDropdown: true },
     { name: 'OUR STORY', page: 'story' },
     { name: 'OUR IMPACT', page: 'impact' },
     { name: 'CONTACT', page: 'contact' },
@@ -40,13 +40,10 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
-          {/* Logo */}
-          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => setActivePage('home')}>
-            <div className="w-10 h-10 rounded-full emerald-gradient-bg border border-brand-gold/50 flex items-center justify-center text-amber-300 font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
-              G
-            </div>
+          {/* Logo (Without G Icon) */}
+          <div className="flex items-center cursor-pointer group" onClick={() => setActivePage('home')}>
             <div className="flex flex-col">
-              <span className="brand-font-serif text-2xl sm:text-3xl font-bold tracking-tight text-brand-green dark:text-amber-100 select-none">
+              <span className="brand-font-serif text-2xl sm:text-3xl font-bold tracking-tight text-brand-green dark:text-amber-100 select-none group-hover:opacity-90 transition-opacity">
                 gree<span className="gold-gradient-text italic">N</span>trib<span className="text-brand-green dark:text-amber-100">E</span>
               </span>
               <span className="text-[9px] uppercase tracking-widest text-brand-gold-dark dark:text-amber-400 font-sans -mt-1 font-bold flex items-center gap-1">
@@ -67,9 +64,9 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
                     onMouseLeave={() => setIsCollectionsHovered(false)}
                   >
                     <button
-                      onClick={() => setActivePage('shop')}
+                      onClick={() => setActivePage('collections')}
                       className={`flex items-center gap-1 hover:text-brand-gold transition-colors ${
-                        activePage === 'shop' ? 'text-brand-green dark:text-amber-300 border-b-2 border-brand-gold pb-1' : ''
+                        activePage === 'collections' ? 'text-brand-green dark:text-amber-300 border-b-2 border-brand-gold pb-1' : ''
                       }`}
                     >
                       {link.name}
@@ -83,7 +80,7 @@ export default function Navbar({ activePage, setActivePage, onSearchClick }) {
                           <button
                             key={cat.label}
                             onClick={() => {
-                              setActivePage('shop');
+                              setActivePage('collections');
                               setIsCollectionsHovered(false);
                             }}
                             className="w-full text-left px-4 py-2.5 text-xs text-brand-charcoal dark:text-amber-100 hover:bg-brand-beige dark:hover:bg-emerald-950/60 hover:text-brand-green dark:hover:text-amber-300 font-semibold transition-colors flex items-center justify-between"

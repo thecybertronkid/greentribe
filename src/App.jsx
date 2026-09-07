@@ -16,6 +16,7 @@ import BambooForestBackground from './components/BambooForestBackground';
 
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
+import CollectionsPage from './pages/CollectionsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import StoryImpactPage from './pages/StoryImpactPage';
 import ContactPage from './pages/ContactPage';
@@ -90,6 +91,15 @@ export default function App() {
                   onSelectProduct={handleSelectProduct}
                   onQuickView={setQuickViewProduct}
                   searchQuery={searchQuery}
+                  onShowToast={showToast}
+                />
+              )}
+
+              {activePage === 'collections' && (
+                <CollectionsPage 
+                  onNavigate={setActivePage}
+                  onSelectProduct={handleSelectProduct}
+                  onQuickView={setQuickViewProduct}
                   onShowToast={showToast}
                 />
               )}

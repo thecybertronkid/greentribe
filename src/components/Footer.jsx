@@ -51,7 +51,8 @@ export default function Footer({ setActivePage }) {
             <h4 className="font-semibold text-sm text-amber-200 uppercase tracking-wider">Quick Links</h4>
             <ul className="space-y-2 text-emerald-100/90">
               <li><button onClick={() => setActivePage('home')} className="hover:text-amber-300 transition-colors">Home</button></li>
-              <li><button onClick={() => setActivePage('shop')} className="hover:text-amber-300 transition-colors">Shop Catalog</button></li>
+              <li><button onClick={() => setActivePage('shop')} className="hover:text-amber-300 transition-colors">Shop All Products</button></li>
+              <li><button onClick={() => setActivePage('collections')} className="hover:text-amber-300 transition-colors">Curated Collections</button></li>
               <li><button onClick={() => setActivePage('story')} className="hover:text-amber-300 transition-colors">Our Story & Heritage</button></li>
               <li><button onClick={() => setActivePage('impact')} className="hover:text-amber-300 transition-colors">Artisan Impact</button></li>
               <li><button onClick={() => setActivePage('contact')} className="hover:text-amber-300 transition-colors">Contact & Craft Centers</button></li>
@@ -60,13 +61,12 @@ export default function Footer({ setActivePage }) {
 
           {/* Col 3: Categories */}
           <div className="space-y-3">
-            <h4 className="font-semibold text-sm text-amber-200 uppercase tracking-wider">Product Categories</h4>
+            <h4 className="font-semibold text-sm text-amber-200 uppercase tracking-wider">Product Collections</h4>
             <ul className="space-y-2 text-emerald-100/90">
-              <li><button onClick={() => setActivePage('shop')} className="hover:text-amber-300 transition-colors">Baskets & Storage</button></li>
-              <li><button onClick={() => setActivePage('shop')} className="hover:text-amber-300 transition-colors">Trays & Platters</button></li>
-              <li><button onClick={() => setActivePage('shop')} className="hover:text-amber-300 transition-colors">Home Decor & Wall Medallions</button></li>
-              <li><button onClick={() => setActivePage('shop')} className="hover:text-amber-300 transition-colors">Kitchen & Dining</button></li>
-              <li><button onClick={() => setActivePage('shop')} className="hover:text-amber-300 transition-colors">Table & Desk Organizers</button></li>
+              <li><button onClick={() => setActivePage('collections')} className="hover:text-amber-300 transition-colors">Baskets & Storage</button></li>
+              <li><button onClick={() => setActivePage('collections')} className="hover:text-amber-300 transition-colors">Trays & Platters</button></li>
+              <li><button onClick={() => setActivePage('collections')} className="hover:text-amber-300 transition-colors">Lighting & Ambient Decor</button></li>
+              <li><button onClick={() => setActivePage('collections')} className="hover:text-amber-300 transition-colors">Kitchen & Dining</button></li>
             </ul>
           </div>
 
