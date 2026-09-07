@@ -18,7 +18,8 @@ import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import CollectionsPage from './pages/CollectionsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
-import StoryImpactPage from './pages/StoryImpactPage';
+import StoryPage from './pages/StoryPage';
+import ImpactPage from './pages/ImpactPage';
 import ContactPage from './pages/ContactPage';
 import WishlistPage from './pages/WishlistPage';
 
@@ -115,8 +116,15 @@ export default function App() {
                 />
               )}
 
-              {(activePage === 'story' || activePage === 'impact') && (
-                <StoryImpactPage 
+              {activePage === 'story' && (
+                <StoryPage 
+                  onNavigate={setActivePage}
+                  onOpenVideo={() => setIsVideoOpen(true)}
+                />
+              )}
+
+              {activePage === 'impact' && (
+                <ImpactPage 
                   onNavigate={setActivePage}
                   onOpenVideo={() => setIsVideoOpen(true)}
                 />
